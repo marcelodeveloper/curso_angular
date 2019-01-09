@@ -1,15 +1,5 @@
-interface GenericCRUD<T>{
-    criar(objeto:T): T;
-    buscarTodos(): T[];
-    buscar(index: number): T;
-    atualizar(index: number, objeto: T): T;
-    remover(index: number);
-}
-
-class GenericAnimal{
-    nome: string;
-    raca: string;
-}
+import { GenericCRUD } from './generic-crud'
+import { GenericAnimal } from './generic-animal'
 
 class GenericAnimalCRUD implements GenericCRUD<GenericAnimal>{
     private animais: Array<GenericAnimal> = []

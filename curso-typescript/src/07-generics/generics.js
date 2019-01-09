@@ -1,8 +1,6 @@
-var GenericAnimal = /** @class */ (function () {
-    function GenericAnimal() {
-    }
-    return GenericAnimal;
-}());
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var generic_animal_1 = require("./generic-animal");
 var GenericAnimalCRUD = /** @class */ (function () {
     function GenericAnimalCRUD() {
         this.animais = [];
@@ -27,7 +25,7 @@ var GenericAnimalCRUD = /** @class */ (function () {
     return GenericAnimalCRUD;
 }());
 var genericCrud = new GenericAnimalCRUD();
-var gato = new GenericAnimal();
+var gato = new generic_animal_1.GenericAnimal();
 gato.nome = "Totó";
 gato.raca = "Vira Lata";
 var gatoCriado = genericCrud.criar(gato);
