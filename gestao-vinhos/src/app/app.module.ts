@@ -1,18 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {FormsModule } from '@angular/forms'
+import {HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
+import { VinhosComponent } from './components/vinhos/vinhos.component';
+import { VinhosService } from './services/vinhos.service';
+
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api'
+import { VinhoApi } from '../app/vinho-api'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    CardComponent,
+    VinhosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(VinhoApi)
   ],
-  providers: [],
+  providers: [VinhosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
